@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <div class="container" >
+    <div class="jumbotron text-center">
+      <h1 style="font-family:'Georgia',serif; font-weight:bold; font-variant:small-caps; font-size:3em;">
+        Heart Disease Prediction Form</h1>
+    </div>
+
+    {% if messages[0] == "Heart Disease" %}
+    <div class="alert alert-danger"> <h3 style="font-size:1.5em; font-family:'Georgia', serif;">
+      {{ messages[0] }}</h3> </div>
+    {% elif messages[0] == "No Heart Disease" %}
+    <div class="alert alert-success"> <h3 style="font-size:1.5em; font-family:'Georgia', serif;">
+      {{ messages[0] }}</h3> </div>
+    {% endif %}
+
+
+    <form action="/" method="post">
+      {{ form.hidden_tag() }}
+      <div class="form-group" style="font-size:1.3em; font-family:'Georgia', serif;">
+
+        <div>
+          <strong>{{ form.name.label(class="control-label col-lg-2") }}</strong><br>
+          {{ form.name(class="form-control", value="Shubham Kumar") }}
+        </div><br>
+
+        <div>
+          <b>{{ form.age.label(class="control-label col-lg-2") }} </b><br>
+          {{ form.age(class="form-control") }}
+        </div><br>
+
+        <div class="dropdown">
+          <b>{{ form.sex.label(class="control-label col-lg-2") }} </b><br>
+          {{ form.sex(class="form-control") }}
+        </div><br>
+
+        <div>
+          <b>{{ form.cp.label(class="control-label col-lg-2") }} </b><br>
+          {{ form.cp(class="form-control") }}
+        </div><br>
+
+        <div>
+          <b>{{ form.trestbps.label(class="control-label col-lg-2") }} </b><br>
+          {{ form.trestbps(class="form-control") }}
+        </div><br>
+
+        <div>
+          <b>{{ form.chol.label(class="control-label col-lg-2") }} </b><br>
+          {{ form.chol(class="form-control") }}
+        </div><br>
+
+        <div>
+          <b>{{ form.fbs.label(class="control-label col-lg-4") }} </b><br>
+          {{ form.fbs(class="form-control") }}
+        </div><br>
+
+        <div>
+          <b>{{ form.restecg.label(class="control-label col-lg-4") }} </b><br>
+          {{ form.restecg(class="form-control") }}
+        </div><br>
+
+        <div>
+          <b>{{ form.thalach.label(class="control-label col-lg-4") }} </b><br>
+          {{ form.thalach(class="form-control") }}
+        </div><br>
+
+        <div>
+          <b>{{ form.exang.label(class="control-label col-lg-4") }} </b><br>
+          {{ form.exang(class="form-control") }}
+        </div><br>
+
+        <div>
+          <b>{{ form.oldpeak.label(class="control-label col-lg-4") }} </b><br>
+          {{ form.oldpeak(class="form-control") }}
+        </div><br>
+
+        <div>
+          <b>{{ form.slope.label(class="control-label col-lg-6") }} </b><br>
+          {{ form.slope(class="form-control") }}
+        </div><br>
+
+        <div>
+          <b>{{ form.ca.label(class="control-label col-lg-6") }} </b><br>
+          {{ form.ca(class="form-control") }}
+        </div><br>
+
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg btn-block" style="font-weight:bold; font-family:'Georgia', serif; font-size:1.3em;">
+        Check Up</button>
+
+    </form>
+  </div>
+  </body>
+  </html>
